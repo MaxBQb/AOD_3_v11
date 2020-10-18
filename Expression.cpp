@@ -40,19 +40,19 @@ ostream &operator<<(ostream &out, const Expression &expr) {
     return out;
 }
 
-void Expression::print(Expression::Node *root, int level) {
+void Expression::print(Expression::Node* root, ostream &out, int level) {
     if (root == nullptr)
         return;
 
-    print(root->right, level+1);
+    print(root->right, out, level+1);
     for (int i = 0; i < (level<<1); i++)
-        cout << ' ';
+        out << ' ';
 
     if (root->is_operation)
-        cout << (char)(root->data);
+        out << (char)(root->data);
     else
-        cout << root->data;
-    cout << '\n';
+        out << root->data;
+    out << '\n';
 
-    print(root->left, level+1);
+    print(root->left, out, level+1);
 }
