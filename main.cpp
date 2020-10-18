@@ -1,14 +1,15 @@
 #include "Expression.h"
+#include <windows.h>
 using namespace std;
 
 int main() {
-    setlocale(0, "");
+    SetConsoleOutputCP(CP_UTF8);
     Expression expr;
-    cout << "Ââåäèòå âûðàæåíèå: ";
+    cout << "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ Ð²Ñ‹Ñ€Ð°Ð¶ÐµÐ½Ð¸Ðµ: ";
     cin >> expr;
-    cout << "Âûâîä ñïðàâà íàëåâî:\n";
+    cout << "Ð’Ñ‹Ð²Ð¾Ð´ ÑÐ¿Ñ€Ð°Ð²Ð° Ð½Ð°Ð»ÐµÐ²Ð¾:\n";
     expr.print();
-    cout << "Âûâîä ïðÿìûì îáõîäîì â ãëóáèíó: ";
+    cout << "Ð’Ñ‹Ð²Ð¾Ð´ Ð¿Ñ€ÑÐ¼Ñ‹Ð¼ Ð¾Ð±Ñ…Ð¾Ð´Ð¾Ð¼ Ð² Ð³Ð»ÑƒÐ±Ð¸Ð½Ñƒ: ";
     cout << expr;
     return 0;
 }
