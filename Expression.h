@@ -27,9 +27,11 @@ class Expression {
     };
     Node* root;
     static Node* readExpression(istream& in);
-    static void printExpression(ostream& out, Node* root, int level = 0);
+    static void printExpression(ostream& out, Node* root);
+    static void print(Node* root, int level = 0);
 public:
     explicit Expression(Node* root = nullptr): root(root) {}
+    void print() { print(root); }
     friend istream& operator >>(istream& in, Expression& expr);
     friend ostream& operator <<(ostream& out, const Expression& expr);
     ~Expression() { delete root; }
